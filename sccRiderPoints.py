@@ -77,7 +77,7 @@ class TkFileDialogExample(tk.Frame):
     ###check for duplicates
     #initialize to false before every run
     self.Duplicates = False
-    self.DuplicateExists = self.checkIfDuplicates_2 (self.RiderIds)
+    self.DuplicateExists = self.checkIfDuplicates (self.RiderIds)
     #print (self.DuplicateExists)
     
     # open file on your own
@@ -139,7 +139,7 @@ class TkFileDialogExample(tk.Frame):
 
 
   ListOfDuplicates = []
-  def checkIfDuplicates_2(self, listOfElems):
+  def checkIfDuplicates(self, listOfElems):
     ''' Check if given list contains any duplicates '''    
     setOfElems = set()
     del self.ListOfDuplicates [:]
