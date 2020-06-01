@@ -17,6 +17,8 @@ class TkFileDialogExample(tk.Frame):
     # options for buttons
     button_opt = {'fill': tk.BOTH, 'padx': 5, 'pady': 5}
     label_opt = {'padx': 5, 'pady': 2}
+    entryLabel_opt = {'side':tk.LEFT}
+    entry_opt = {'side':tk.LEFT}#, 'padx': 5, 'pady': 5}
 
     # define buttons
     #tk.Button(self, text='askopenfile', command=self.askopenfile).pack(**button_opt)
@@ -26,7 +28,20 @@ class TkFileDialogExample(tk.Frame):
     tk.Label(self, text = 'Step 2: Select csv contacts file (must be a csv file)').pack(**label_opt)
     tk.Label(self, text = 'Step 3: If there were no duplicates, output.csv file would be generated in the same folder as your original file').pack(**label_opt)
     tk.Label(self, text = 'Step 3b: If there were ERRORS, you would see pop ups that tell you the issue. Fix that, and repeat by clicking the button').pack(**label_opt)
+    
+    tk.Label(self, text = "Very Short").pack(**entryLabel_opt)
+    tk.Entry(self).pack(**entry_opt)
+    tk.Label(self, text = "Short").pack(**entryLabel_opt)
+    tk.Entry(self).pack(**entry_opt)
+    tk.Label(self, text = "Medium").pack(**entryLabel_opt)
+    tk.Entry(self).pack(**entry_opt)
+    tk.Label(self, text = "Long").pack(**entryLabel_opt)
+    tk.Entry(self).pack(**entry_opt)
+    tk.Label(self, text = "Ultra Long").pack(**entryLabel_opt)
+    tk.Entry(self).pack(**entry_opt)
+    
     tk.Button(self, text='askopenfilename', command=self.askopenfilename).pack(**label_opt)
+
     #tk.Button(self, text='asksaveasfile', command=self.asksaveasfile).pack(**button_opt)
     #tk.Button(self, text='asksaveasfilename', command=self.asksaveasfilename).pack(**button_opt)
     #tk.Button(self, text='askdirectory', command=self.askdirectory).pack(**button_opt)
