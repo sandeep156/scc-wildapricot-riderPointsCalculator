@@ -14,37 +14,28 @@ class TkFileDialogExample(tk.Frame):
 
     tk.Frame.__init__(self, root)
 
-    # options for buttons
-    button_opt = {'fill': tk.BOTH, 'padx': 5, 'pady': 5}
-    label_opt = {'padx': 5, 'pady': 2}
-    entryLabel_opt = {'side':tk.LEFT}
-    entry_opt = {'side':tk.LEFT}#, 'padx': 5, 'pady': 5}
-
-    # define buttons
-    #tk.Button(self, text='askopenfile', command=self.askopenfile).pack(**button_opt)
-    tk.Label(self, text = 'READ THIS FIRST!!!!!!!').pack(**button_opt)
-    tk.Label(self, text = 'When you click the button below, you will be prompted for two files, one at a time').pack(**label_opt)
-    tk.Label(self, text = 'Step 1: Select file with list of riders and lengths ridden (must be a csv file)').pack(**label_opt)
-    tk.Label(self, text = 'Step 2: Select csv contacts file (must be a csv file)').pack(**label_opt)
-    tk.Label(self, text = 'Step 3: If there were no duplicates, output.csv file would be generated in the same folder as your original file').pack(**label_opt)
-    tk.Label(self, text = 'Step 3b: If there were ERRORS, you would see pop ups that tell you the issue. Fix that, and repeat by clicking the button').pack(**label_opt)
+    #define widgets
     
-    tk.Label(self, text = "Very Short").pack(**entryLabel_opt)
-    tk.Entry(self).pack(**entry_opt)
-    tk.Label(self, text = "Short").pack(**entryLabel_opt)
-    tk.Entry(self).pack(**entry_opt)
-    tk.Label(self, text = "Medium").pack(**entryLabel_opt)
-    tk.Entry(self).pack(**entry_opt)
-    tk.Label(self, text = "Long").pack(**entryLabel_opt)
-    tk.Entry(self).pack(**entry_opt)
-    tk.Label(self, text = "Ultra Long").pack(**entryLabel_opt)
-    tk.Entry(self).pack(**entry_opt)
+    tk.Label(self, text = 'READ THIS FIRST!!!!!!!').grid(row = 0, column = 0, columnspan = 2)
+    tk.Label(self, text = 'Fill ride lengths.Fill 0 if N/A').grid(row = 1, column = 0, columnspan = 2)
+    tk.Label(self, text = "Click 'RUN' button").grid(row = 2, column = 0, columnspan = 2)
+    tk.Label(self, text = 'Select riders csv file').grid(row = 3, column = 0, columnspan = 2)
+    tk.Label(self, text = 'Select contacts csv file').grid(row = 4, column = 0, columnspan = 2)
+    tk.Label(self, text = 'If NO ERRORS, output.csv generated').grid(row = 5, column = 0, columnspan = 2)
+    tk.Label(self, text = 'If ERRORS, follow pop up instructions').grid(row = 6, column = 0, columnspan = 2)
     
-    tk.Button(self, text='askopenfilename', command=self.askopenfilename).pack(**label_opt)
-
-    #tk.Button(self, text='asksaveasfile', command=self.asksaveasfile).pack(**button_opt)
-    #tk.Button(self, text='asksaveasfilename', command=self.asksaveasfilename).pack(**button_opt)
-    #tk.Button(self, text='askdirectory', command=self.askdirectory).pack(**button_opt)
+    tk.Label(self, text = "Very Short").grid(row = 7, column = 0)
+    tk.Entry(self).grid(row = 7, column = 1)
+    tk.Label(self, text = "Short").grid(row = 8, column = 0)
+    tk.Entry(self).grid(row = 8, column = 1)
+    tk.Label(self, text = "Medium").grid(row = 9, column = 0)
+    tk.Entry(self).grid(row = 9, column = 1)
+    tk.Label(self, text = "Long").grid(row = 10, column = 0)
+    tk.Entry(self).grid(row = 10, column = 1)
+    tk.Label(self, text = "Ultra Long").grid(row = 11, column = 0)
+    tk.Entry(self).grid(row = 11, column = 1)
+    
+    tk.Button(self, text='RUN', command=self.askopenfilename).grid(row = 12, column = 1, columnspan = 2)
 
     # define options for opening or saving a file
     self.file_opt = options = {}
@@ -249,7 +240,7 @@ class TkFileDialogExample(tk.Frame):
 if __name__=='__main__':
   root = tk.Tk()
   root.title("Rider length and total rides calculator")
-  TkFileDialogExample(root).pack()
+  #TkFileDialogExample(root).pack()
+  #root.mainloop()
+  TkFileDialogExample(root).grid(row = 0, column = 0)
   root.mainloop()
-
-#todo: lost fo del{}
