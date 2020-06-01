@@ -83,27 +83,27 @@ class TkFileDialogExample(tk.Frame):
     print (int(self.LongEntry.get()))
     print (int(self.UltraLongEntry.get()))
 
-   ## get filename
-   #riderListFilename = filedialog.askopenfilename(**self.file_opt)
-   ##print(riderListFilename)
-   #
-   #contactListFilename = filedialog.askopenfilename(**self.contactFile_opt)
-   ##print(contactListFilename)
-   #
-   ## open file on your own
-   #if riderListFilename:
-   #   self.riderFileStuff(riderListFilename)
-   #   
-   ####check for duplicates
-   ##initialize to false before every run
-   #self.Duplicates = False
-   #self.DuplicateExists = self.checkIfDuplicates (self.RiderIds)
-   ##print (self.DuplicateExists)
-   #
-   ## open file on your own
-   #if contactListFilename:
-   #   self.contactFileStuff(contactListFilename)
-   #
+   # get filename
+   riderListFilename = filedialog.askopenfilename(**self.file_opt)
+   #print(riderListFilename)
+   
+   contactListFilename = filedialog.askopenfilename(**self.contactFile_opt)
+   #print(contactListFilename)
+   
+   # open file on your own
+   if riderListFilename:
+      self.riderFileStuff(riderListFilename)
+      
+   ###check for duplicates
+   #initialize to false before every run
+   self.Duplicates = False
+   self.DuplicateExists = self.checkIfDuplicates (self.RiderIds)
+   #print (self.DuplicateExists)
+   
+   # open file on your own
+   if contactListFilename:
+      self.contactFileStuff(contactListFilename)
+   
     return
 
 
