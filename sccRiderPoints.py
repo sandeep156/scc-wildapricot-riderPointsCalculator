@@ -77,33 +77,61 @@ class TkFileDialogExample(tk.Frame):
     """Returns an opened file in read mode.
     This time the dialog just returns a filename and the file is opened by your own code.
     """
-    print (int(self.VeryShortEntry.get()))
-    print (int(self.ShortEntry.get()))
-    print (int(self.MediumEntry.get()))
-    print (int(self.LongEntry.get()))
-    print (int(self.UltraLongEntry.get()))
+    
+    #self.rideLengthDict("Rider - Very Short").value = int(self.VeryShortEntry.get())
+    if(len(self.VeryShortEntry.get()) == 0):
+        updateVal = {"Rider - Very Short": 0}
+    else:
+        updateVal = {"Rider - Very Short": int(self.VeryShortEntry.get())}
+    self.rideLengthDict.update(updateVal)
+    
+    if(len(self.ShortEntry.get()) == 0):
+        updateVal = {"Rider - Short": 0}
+    else:
+        updateVal = {"Rider - Short": int(self.ShortEntry.get())}
+    self.rideLengthDict.update(updateVal)
+    
+    if(len(self.MediumEntry.get()) == 0):
+        updateVal = {"Rider - Medium": 0}
+    else:
+        updateVal = {"Rider - Medium": int(self.MediumEntry.get())}
+    self.rideLengthDict.update(updateVal)
+    
+    if(len(self.LongEntry.get()) == 0):
+        updateVal = {"Rider - Long": 0}
+    else:
+        updateVal = {"Rider - Long": int(self.LongEntry.get())}
+    self.rideLengthDict.update(updateVal)
+    
+    if(len(self.UltraLongEntry.get()) == 0):
+        updateVal = {"Rider - Ultra": 0}
+    else:
+        updateVal = {"Rider - Ultra": int(self.UltraLongEntry.get())}
+    self.rideLengthDict.update(updateVal)
 
-   # get filename
-   riderListFilename = filedialog.askopenfilename(**self.file_opt)
-   #print(riderListFilename)
-   
-   contactListFilename = filedialog.askopenfilename(**self.contactFile_opt)
-   #print(contactListFilename)
-   
-   # open file on your own
-   if riderListFilename:
-      self.riderFileStuff(riderListFilename)
-      
-   ###check for duplicates
-   #initialize to false before every run
-   self.Duplicates = False
-   self.DuplicateExists = self.checkIfDuplicates (self.RiderIds)
-   #print (self.DuplicateExists)
-   
-   # open file on your own
-   if contactListFilename:
-      self.contactFileStuff(contactListFilename)
-   
+    #print(self.rideLengthDict)
+
+    #get filename
+    riderListFilename = filedialog.askopenfilename(**self.file_opt)
+    #print(riderListFilename)
+    
+    contactListFilename = filedialog.askopenfilename(**self.contactFile_opt)
+    #print(contactListFilename)
+    
+    # open file on your own
+    if riderListFilename:
+       self.riderFileStuff(riderListFilename)
+       
+    ###check for duplicates
+    #initialize to false before every run
+    self.Duplicates = False
+    self.DuplicateExists = self.checkIfDuplicates (self.RiderIds)
+    #print (self.DuplicateExists)
+    
+    # open file on your own
+    if contactListFilename:
+       self.contactFileStuff(contactListFilename)
+    
     return
 
 
@@ -116,11 +144,11 @@ class TkFileDialogExample(tk.Frame):
   EventCompleteUserIdList = []
   
   rideLengthDict = {
-    "Rider - Very Short" : 10,
-    "Rider - Short" : 20,
-    "Rider - Medium" : 30,
-    "Rider - Long" : 40,
-    "Rider - Ultra" : 50
+    "Rider - Very Short" : 0,
+    "Rider - Short" : 0,
+    "Rider - Medium" : 0,
+    "Rider - Long" : 0,
+    "Rider - Ultra" : 0
     }  
 
 
