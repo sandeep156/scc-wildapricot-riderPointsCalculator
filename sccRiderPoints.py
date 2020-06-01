@@ -25,15 +25,24 @@ class TkFileDialogExample(tk.Frame):
     tk.Label(self, text = 'If ERRORS, follow pop up instructions').grid(row = 6, column = 0, columnspan = 2)
     
     tk.Label(self, text = "Very Short").grid(row = 7, column = 0)
-    tk.Entry(self).grid(row = 7, column = 1)
+    self.VeryShortEntry = tk.StringVar()
+    tk.Entry(self, textvariable = self.VeryShortEntry).grid(row = 7, column = 1)
+    
     tk.Label(self, text = "Short").grid(row = 8, column = 0)
-    tk.Entry(self).grid(row = 8, column = 1)
+    self.ShortEntry = tk.StringVar()
+    tk.Entry(self, textvariable = self.ShortEntry).grid(row = 8, column = 1)
+    
     tk.Label(self, text = "Medium").grid(row = 9, column = 0)
-    tk.Entry(self).grid(row = 9, column = 1)
+    self.MediumEntry = tk.StringVar()
+    tk.Entry(self, textvariable = self.MediumEntry).grid(row = 9, column = 1)
+    
     tk.Label(self, text = "Long").grid(row = 10, column = 0)
-    tk.Entry(self).grid(row = 10, column = 1)
+    self.LongEntry = tk.StringVar()
+    tk.Entry(self, textvariable = self.LongEntry).grid(row = 10, column = 1)
+    
     tk.Label(self, text = "Ultra Long").grid(row = 11, column = 0)
-    tk.Entry(self).grid(row = 11, column = 1)
+    self.UltraLongEntry = tk.StringVar()
+    tk.Entry(self, textvariable = self.UltraLongEntry).grid(row = 11, column = 1)
     
     tk.Button(self, text='RUN', command=self.askopenfilename).grid(row = 12, column = 1, columnspan = 2)
 
@@ -68,28 +77,33 @@ class TkFileDialogExample(tk.Frame):
     """Returns an opened file in read mode.
     This time the dialog just returns a filename and the file is opened by your own code.
     """
+    print (int(self.VeryShortEntry.get()))
+    print (int(self.ShortEntry.get()))
+    print (int(self.MediumEntry.get()))
+    print (int(self.LongEntry.get()))
+    print (int(self.UltraLongEntry.get()))
 
-    # get filename
-    riderListFilename = filedialog.askopenfilename(**self.file_opt)
-    #print(riderListFilename)
-    
-    contactListFilename = filedialog.askopenfilename(**self.contactFile_opt)
-    #print(contactListFilename)
-
-    # open file on your own
-    if riderListFilename:
-       self.riderFileStuff(riderListFilename)
-       
-    ###check for duplicates
-    #initialize to false before every run
-    self.Duplicates = False
-    self.DuplicateExists = self.checkIfDuplicates (self.RiderIds)
-    #print (self.DuplicateExists)
-    
-    # open file on your own
-    if contactListFilename:
-       self.contactFileStuff(contactListFilename)
-    
+   ## get filename
+   #riderListFilename = filedialog.askopenfilename(**self.file_opt)
+   ##print(riderListFilename)
+   #
+   #contactListFilename = filedialog.askopenfilename(**self.contactFile_opt)
+   ##print(contactListFilename)
+   #
+   ## open file on your own
+   #if riderListFilename:
+   #   self.riderFileStuff(riderListFilename)
+   #   
+   ####check for duplicates
+   ##initialize to false before every run
+   #self.Duplicates = False
+   #self.DuplicateExists = self.checkIfDuplicates (self.RiderIds)
+   ##print (self.DuplicateExists)
+   #
+   ## open file on your own
+   #if contactListFilename:
+   #   self.contactFileStuff(contactListFilename)
+   #
     return
 
 
