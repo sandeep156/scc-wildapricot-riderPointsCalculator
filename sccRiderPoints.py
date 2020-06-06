@@ -260,24 +260,28 @@ class TkFileDialogExample(tk.Frame):
     self.popupmsg(fullMsgString)
         
   def popupmsg(self, msg):
-    popup = tk.Tk()
+    # to make pop up appear above main window
+    popup = tk.Toplevel()
     popup.wm_title("!")
+    # to make pop up the focus
+    popup.grab_set()
     label = tk.Label(popup, text= "These riders have duplicate entries, delete duplicate entires and rerun code")
     label.pack(side="top", fill="x", pady=10)
     label = tk.Label(popup, text= msg)
     label.pack(side="top", fill="x", pady=10)
     B1 = tk.Button(popup, text="Okay", command = popup.destroy)
     B1.pack()
-    popup.mainloop()
     
   def popupmsgOutputGenerated(self):
-    popup = tk.Tk()
+    # to make pop up appear above main window
+    popup = tk.Toplevel()
     popup.wm_title("!")
+    # to make pop up the focus
+    popup.grab_set()
     label = tk.Label(popup, text= "Output file generated in the same folder as your input files")
     label.pack(side="top", fill="x", pady=10)
     B1 = tk.Button(popup, text="Okay", command = popup.destroy)
     B1.pack()
-    popup.mainloop()
 
 if __name__=='__main__':
   root = tk.Tk()
