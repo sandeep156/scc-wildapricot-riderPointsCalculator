@@ -285,7 +285,9 @@ class TkFileDialogExample(tk.Frame):
 
 if __name__=='__main__':
   root = tk.Tk()
-  root.title("Rider length and total rides calculator")
+  version = "v1"
+  root.title( version + " Rider mileage calculator")
+  root.geometry("400x400")
   #TkFileDialogExample(root).pack()
   #root.mainloop()
   TkFileDialogExample(root).grid(row = 0, column = 0)
