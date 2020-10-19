@@ -3,7 +3,7 @@
 This GUI was created in Python using http://effbot.org/zone/tkinter-index.htm as reference.
 GUI was developed to help keep track of rider mileages for the Schlumberger Cycling Club.
 
-Get the executable file from the release tab. 
+Get the executable file from the releases section of this github repo. 
 V1 released on 10/18/2020.
 
 To use this GUI, you will need input files from WildApricot.
@@ -14,7 +14,7 @@ The input files are:
 
 ***Steps to get input files and run GUI***
 
-0. Download the executable from the release tab
+0. Download the executable from the releases section of this github repo.
 
 1. Go to the admin view of the Wild Apricot site.
 
