@@ -48,6 +48,8 @@ The input files are:
 
 10. **Run the GUI and follow self-explanatory instructions on the GUI**
 
+![Image of GUI](https://github.com/sandeep156/scc-wildapricot-riderPointsCalculator/blob/master/readmeImages/11_GUIScreenshot.jpg)
+
 11. GUI generates an output file in the folder where it's run from. It should be called **output.csv**.
 
 
